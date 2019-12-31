@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample
+
+  labels:
+    app: sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+
+
+        - name: sample
+          image: gcr.io/collabkare-250512/virtual-manager-v3-cndev:dcba359fffc8e9a86ec16c8674d6d624f321e908
+          resources:
+            requests:
+              memory: 1Gi
+              cpu: "0.25"
+            limits:
+              memory: 2Gi
+              cpu: "0.5"
+
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+           - name: TZ
+             value: "US/Eastern"
+
+
