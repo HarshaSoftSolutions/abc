@@ -15,7 +15,7 @@ steps{
  
  steps{
  script{
- kubernetesDeploy(configs:"sample.yaml",kubeconfiId: "kubeconfiId")
+ kubernetesDeploy(configs:"sample.yaml",kubeconfiId: "bdsjhhj")
  }
  }
  
